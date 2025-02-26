@@ -1,0 +1,303 @@
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 1.2vw;
+  }
+
+/*---Header---*/
+  .box center {
+    width: 60%;
+    margin: 0 auto;
+  }
+  .row {
+    float: left;
+    width: 100%;
+  }
+  .row input {
+    height: 30px;
+  }
+  
+  .row select {
+    display: inline;
+    height: 30px;
+  }
+  .mb {
+    margin-bottom: 30px;
+  }
+  .mb10 {
+    margin-bottom: 10px;
+  }
+  .iheader {
+    background-color: #cff1f5;
+    border: 1px #4cae4c solid;
+    color: blue;
+    border-radius: 5px;
+  }
+  .iheader h1 {
+    margin: 20px;
+    font-size: 2.4vw;
+    text-align: center;
+  }
+  .iheader h2 {
+    margin: 20px;
+    font-size: 1.4vw;
+  }
+  .menu {
+    background-color: rgb(59, 59, 59);
+    color: #ccc;
+    border-radius: 5px;
+  }
+  .menu ul {
+    text-align: center;
+  }
+
+/*---footer----*/
+.footer {
+    background-color: #cff1f5;
+    border: 1px #4cae4c solid;
+    font-size: 0.8vw;
+    color: blue;
+    border-radius: 5px;
+    padding: 20px;
+  }
+
+
+  /*---Home----*/
+  .boxtrai {
+    float: left;
+    width: 74%;
+  }
+  .mr {
+    margin-right: 2%;
+  }
+  .banner {
+    min-height: 300px;
+    width: 100%;
+    text-align: center;
+  }
+  .banner img {
+    min-height: 300px;
+  }
+  /*---- Slideshow container ----- */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Caption text */
+  .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  .active,
+  .dot:hover {
+    background-color: #717171;
+  }
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  /*---end slideshow ----*/
+  
+  .spct {
+    text-align: center;
+  }
+  .spct img {
+    width: 50%;
+  }
+  
+  
+    /*---boxright ----*/
+    .shad {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      .boxtitle {
+        color: #333;
+        padding: 10px;
+        background-color: #eee;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border: 1px #ccc solid;
+        text-align: center;
+      }
+      .boxcontent {
+        border-left: 1px #ccc solid;
+        border-right: 1px #ccc solid;
+        border-bottom: 1px #ccc solid;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        min-height: 200px;
+        padding: 20px;
+      }
+
+      .formtaikhoan {
+        line-height: 150%;
+      }
+      .formtaikhoan input[type="text"],
+      .formtaikhoan input[type="password"],
+      .formtaikhoan input[type="email"] {
+        width: 100%;
+        border: 1px #ccc solid;
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+      .formtaikhoan input[type="checkbox"] {
+        border-radius: 5px;
+      }
+      .formtaikhoan input[type="submit"],
+      .formtaikhoan input[type="reset"] {
+        border-radius: 5px;
+        padding: 5px 10px;
+        background-color: white;
+        border: 1px #eee solid;
+      }
+      .formtaikhoan input[type="submit"]:hover {
+        background-color: #ccc;
+      }
+      .formtaikhoan li a {
+        color: teal;
+        text-decoration: none;
+      }
+      .formtaikhoan li a:hover {
+        color: #060;
+        text-decoration: underline;
+      }
+      .boxcontent2 {
+        border-left: 1px #ccc solid;
+        border-right: 1px #ccc solid;
+        background-color: #eee;
+      }
+
+      /*--menudoc---*/
+.menudoc ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  .menudoc ul li {
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px #ccc solid;
+  }
+  .menudoc ul li a {
+    color: #666;
+    text-decoration: none;
+  }
+  .menudoc ul li:hover {
+    background-color: #ccc;
+  }
+  .searbox input[type="text"] {
+    width: 100%;
+    padding: 5px 10px;
+    background-color: #fff;
+    border: 1px #ccc solid;
+    border-radius: 5px;
+    display: inline-block;
+  }
+
+  .boxfooter {
+    padding: 10px;
+    background-color: #eee;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left: 1px #ccc solid;
+    border-right: 1px #ccc solid;
+    border-bottom: 1px #ccc solid;
+  }
+  .searbox input[type="text"] {
+    width: 100%;
+    padding: 5px 10px;
+    background-color: #fff;
+    border: 1px #ccc solid;
+    border-radius: 5px;
+    display: inline-block;
+  }
+  .prosl table {
+    width: 100%;
+    border-collapse: separate;
+    padding-right: 10px;
+  }
+  .prosl table td:nth-child(1) {
+    width: 80%;
+  }
+  
+  .prosl table td:nth-child(2) {
+    width: 20%;
+    text-align: center;
+  }
+  .thongbao {
+    color: red;
+  }
