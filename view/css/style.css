@@ -277,14 +277,7 @@
     border-right: 1px #ccc solid;
     border-bottom: 1px #ccc solid;
   }
-  .searbox input[type="text"] {
-    width: 100%;
-    padding: 5px 10px;
-    background-color: #fff;
-    border: 1px #ccc solid;
-    border-radius: 5px;
-    display: inline-block;
-  }
+
   .prosl table {
     width: 100%;
     border-collapse: separate;
@@ -298,6 +291,207 @@
     width: 20%;
     text-align: center;
   }
-  .thongbao {
-    color: red;
+
+  /*-----Admin------*/
+  .iheaderadmin {
+    background-color: #eee;
+    border: 1px #ccc solid;
+    color: #666;
+    border-radius: 5px;
+    padding: 10px 20px;
   }
+  .iheaderadmin h1 {
+    font-size: 2vw;
+    text-align: center;
+  }
+
+/* Form Actions Styles */
+.form-actions {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 250px;
+}
+.form-actions input[type="button"]:hover {
+  background-color: #1565c0;
+}
+.required {
+  color: red;
+  margin-left: 5px;
+}
+
+/*-------Index-------*/
+.rowadmin {
+  float: left;
+  width: 100%;
+}
+.rowadmin input[type="text"] {
+  max-width: 400px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.rowadmin select {
+  display: inline;
+  height: 30px;
+}
+.row select[name="cartegory_id"] {
+  width: 400px; /* Đặt độ rộng của thẻ select */
+}
+.row select[name="brand_id"] {
+  width: 400px; /* Đặt độ rộng của thẻ select */
+}
+.mb5 {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.demo {
+  background-color: #cff1f5;
+  min-height: 100px;
+}
+.boxphai {
+  float: left;
+  width: 24%;
+}
+
+.boxcontent2 {
+  border-left: 1px #ccc solid;
+  border-right: 1px #ccc solid;
+  background-color: #eee;
+}
+
+.boxsp {
+  float: left;
+  width: 32%;
+  min-height: 300px;
+  border: 1px #eee solid;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding-left: 10px;
+}
+
+.boxsp img {
+  height: 300px;
+}
+.boxsp .img {
+  min-height: 230px;
+  text-align: center;
+  padding-top: 10px;
+}
+.img img {
+  width: 60%;
+  height: 220px;
+}
+.menu ul {
+  padding: 0px 15px;
+}
+.menu ul li {
+  list-style-type: none;
+  display: inline;
+  padding: 0px 15px;
+}
+.menu ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.5s;
+}
+.menu ul li a:hover {
+  color: white;
+  font-size: 1.6vw;
+}
+.top10 img {
+  width: 20%;
+  height: 50px;
+  float: left;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 1px #ccc solid;
+}
+.top10 a {
+  color: #666;
+  text-decoration: none;
+}
+.top10 a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+.bcrcart {
+  background-color: burlywood;
+}
+
+.shad2 {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+.frmtitle {
+  background-color: aqua;
+  color: #666;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+.frmtitle h1 {
+  text-align: center;
+}
+.frmcontent {
+  padding: 20px 0px;
+}
+
+.frmcontent input[type="text"] {
+  width: 100%;
+  border: 1px #ccc solid;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.frmcontent input[type="submit"],
+.frmcontent input[type="reset"],
+.frmcontent input[type="button"] {
+  border: 1px #ccc solid;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: white;
+}
+.frmcontent input[type="submit"]:hover,
+.frmcontent input[type="reset"]:hover,
+.frmcontent input[type="button"]:hover {
+  background-color: #ccc;
+}
+.frmdsloai table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.frmdsloai table th {
+  padding: 20px;
+  background-color: #ccc;
+}
+/* .frmdsloai table th:nth-child(2) {
+  width: 30%;
+  background-color: #ccc;
+}
+.frmdsloai table th:nth-child(3) {
+  width: 40%;
+  background-color: #ccc;
+}
+.frmdsloai table th:nth-child(4) {
+  width: 20%;
+  background-color: #ccc;
+} */
+.frmdsloai table td {
+  padding: 10px 20px;
+  border: 1px #ccc solid;
+}
+
+.bill table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.bill table th {
+  padding: 20px;
+  background-color: #ccc;
+  border: none;
+}
+.bill table td {
+  padding: 10px 20px;
+  border: none;
+}
