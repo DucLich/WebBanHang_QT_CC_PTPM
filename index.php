@@ -17,13 +17,40 @@ $dstop10 = load_all_product_top10();
 if (isset($_GET['act']) && $_GET['act'] != "") {
     $act = $_GET['act'];
     switch ($act) {
+        /*-----Tài khoản-----*/
+        case 'dangky':
+            if (isset($_POST['dangky']) && ($_POST['dangky'])) {
+                $email = $_POST['email'];
+                $username = $_POST['user'];
+                $passwword = $_POST['pass'];
+                insert_taikhoan($email, $username, $passwword);
+                $thongbao = "Đã đăng ký thành công.Vui lòng đăng nhập!";
+            }
+            include "view/taikhoan/dangky.php";
+            break;
+        case 'dangnhap':
+            if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {
+                $username = $_POST['user'];
+                $passwword = $_POST['pass'];
+                $checkuser = checkuser($username, $passwword);
+                if (is_array($checkuser)) {
+                    $_SESSION['user1'] = $checkuser;
+                    // $thongbao = "Bạn đã đăng nhập thành công";
+                    header('Location:index.php');
+                } else {
+                    $thongbao = "Tài khoản không tồn tại. Vui lòng kiểm tra hoặc đăng ký!";
+                }
+
+            }
+            if (isset($thongbao) && $thongbao != "") {
+                $_SESSION['thongbao'] = $thongbao;
+            }
+            header('Location:index.php');
+            break;
+
         case 'product':
             break;
         case 'productct':
-            break;
-
-       
-            include "view/lienhe.php";
             break;
 
         default:
