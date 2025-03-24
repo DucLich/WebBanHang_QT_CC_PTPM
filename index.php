@@ -48,6 +48,32 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
             header('Location:index.php');
             break;
 
+        /*---Giỏ hàng----*/
+        case 'addtocart':
+            if (isset($_POST['addtocart']) && ($_POST['addtocart'])) {
+                $id = $_POST['id'];
+                $name = $_POST['name'];
+                $img = $_POST['img'];
+                $price = $_POST['price'];
+                $soluong = 1;
+                $ttien = $soluong * $price;
+                $spadd = [$id, $name, $img, $price, $soluong, $ttien];
+                array_push($_SESSION['mycart'], $spadd);
+
+            }
+            include "view/cart/viewcart.php";
+            break;
+        case 'delcart':
+            if (isset($_GET['idcart'])) {
+                $index = $_GET['idcart'];
+                // Loại bỏ phần tử tại vị trí $index khỏi mảng $_SESSION['mycart']
+                array_splice($_SESSION['mycart'], $index, 1);
+            } else {
+                $_SESSION['mycart'] = [];
+            }
+            include "view/cart/viewcart.php";
+            // header('Location:index.php?act=viewcart');
+            break;
         case 'product':
             break;
         case 'productct':
