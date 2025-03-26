@@ -74,10 +74,71 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
             include "view/cart/viewcart.php";
             // header('Location:index.php?act=viewcart');
             break;
+
+        /*---Hóa đơn ----*/
+        case 'bill':
+            include "view/cart/bill.php";
+            break;
+        case 'billcomfirm':
+            if (isset($_POST['dongydathang']) && ($_POST['dongydathang'])) {
+                if (isset($_SESSION['user1']))
+                    $iduser = $_SESSION['user1']['id'];
+                else
+                    $iduser = 0;
+                $name = $_POST['name'];
+                $email = $_POST['email'];
+                $address = $_POST['address'];
+                $tel = $_POST['tel'];
+                $pttt = $_POST['pttt'];
+                $ngaydathang = date("l jS \of F Y h:i:s A");
+                $tongdonhang = tongdonhang();
+
+                $idbill = insert_bill($iduser, $name, $email, $address, $tel, $pttt, $ngaydathang, $tongdonhang);
+
+                //insert into cart: $sesssion['mycart'] & idbill
+                foreach ($_SESSION['mycart'] as $cart) {
+                    insert_cart($_SESSION['user1']['id'], $cart[0], $cart[2], $cart[1], $cart[3], $cart[4], $cart[5], $idbill);
+                }
+                $_SESSION['cart'] = [];
+            }
+            $bill = load_one_bill($idbill);
+            $billct = load_all_cart($idbill);
+            include "view/cart/billcomfirm.php";
+            break;
+
+        case 'mybill':
+            $listbill = load_all_bill("", $_SESSION['user1']['id']);
+            include "view/cart/mybill.php";
+            break;
+
+        /*---Thông tin sản phẩm ----*/
         case 'product':
+            if (isset($_POST['kyw']) && ($_POST['kyw'] != "")) {
+                $kyw = $_POST['kyw'];
+            } else {
+                $kyw = "";
+            }
+            if (isset($_GET['cartegory_id']) && ($_GET['cartegory_id'] > 0)) {
+                $cartegory_id = $_GET['cartegory_id'];
+
+            } else {
+                $cartegory_id = 0;
+            }
+            $dsproduct = load_all_product($kyw, $cartegory_id);
+            $name = load_name_cartegory($cartegory_id);
+            include "view/product.php";
             break;
         case 'productct':
-            break;
+            if (isset($_GET['product_id']) && ($_GET['product_id'] > 0)) {
+                $id = $_GET['product_id'];
+                $oneproduct = load_one_product($id);
+                extract($oneproduct);
+                $product_cungloai = load_product_cungloai($id, $cartegory_id);
+                include "view/productct.php";
+            } else {
+                include "view/home.php";
+            }
+            break;    
 
         default:
             include "view/home.php";
