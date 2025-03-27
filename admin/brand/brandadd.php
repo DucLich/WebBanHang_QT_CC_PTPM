@@ -1,37 +1,39 @@
+<script type="text/javascript">
+function validateBrandInput() {
+    var brandName = document.forms["brandForm"]["brand_name"].value;
+    if (brandName == "") {
+        document.getElementById("error-message").innerText = "Vui lòng nhập tên thương hiệu";
+        return false;
+    }
+}
+</script>
+
 <div class="row">
     <div class="row frmtitle">
-        <h1>DANH SÁCH CÁC THƯƠNG HIỆU</h1>
+        <h1>THÊM MỚI THƯƠNG HIỆU</h1>
     </div>
     <div class="row frmcontent">
-        <div class="row mb frmdsloai">
-            <table>
-                <tr>
-                    <th></th>
-                    <th>Mã Thương hiệu</th>
-                    <th>Tên Thương hiệu</th>
-                    <th></th>
-                </tr>
-                <?php
-                foreach ($brandlist as $brand) {
-                    extract($brand);
-                    $brandupdate = "index.php?act=brandupdate&brand_id=" . $brand_id;
-                    $branddelete = "index.php?act=branddelete&brand_id=" . $brand_id;
-                    echo '<tr>
-                    <td><input type="checkbox" name="" id=""></td>
-                    <td>' . $brand_id . '</td>
-                    <td>' . $brand_name . '</td>
-                    <td> <a href="' . $brandupdate . '"><input type="button" value="Sửa"></a> <a href="' . $branddelete . '"><input type="button" value="Xóa"></a></td>
-                </tr>';
-                }
-                ?>
-            </table>
-        </div>
-        <div class="row mb">
-            <input type="button" value="Chọn tất cả">
-            <input type="button" value="Bỏ chọn tất cả">
-            <input type="button" value="Xóa các mục đã chọn">
-            <a href="index.php?act=brandadd">
-                <input type="button" value="Nhập thêm">
-        </div>
+        <form name="brandForm" action="index.php?act=brandadd" method="post">
+            <!-- <div class="row mb">
+                Mã thương hiệu <br>
+                <input type="text" name="" disabled />
+            </div> -->
+            <div class="rowadmin mb5">
+                <div>Tên thương hiệu <span class="required">*</span></div>
+                <input type="text" name="brand_name" />
+            </div>
+            <div id="error-message" style="color: red; text-align: center;"></div>
+            <div class="form-actions">
+                <input type="submit" name="addcr" value="THÊM MỚI" onclick="return validateBrandInput()">
+                <input type="reset" value="NHẬP LẠI">
+                <a href="index.php?act=brandlist">
+                    <input type="button" value="DANH SÁCH">
+                </a>
+            </div>
+            <?php
+            if (isset($thongbao) && ($thongbao != ""))
+                echo $thongbao;
+            ?>
+        </form>
     </div>
 </div>

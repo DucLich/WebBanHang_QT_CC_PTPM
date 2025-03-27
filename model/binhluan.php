@@ -22,4 +22,9 @@ function load_all_binhluan($idpro)
     $listbl = pdo_query($sql);
     return $listbl;
 }
+function delete_bl($id)
+{
+    $sql = "DELETE FROM tbl_binhluan WHERE id =" . $id;
+    pdo_execute($sql);
+}
 ?>
