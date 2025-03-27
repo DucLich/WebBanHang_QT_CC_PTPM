@@ -163,6 +163,10 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
             } else {
                 include "view/home.php";
             }
+            break;
+        case 'thoat':
+            session_unset();
+            header('Location:index.php');
             break;    
 
         default:
