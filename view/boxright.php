@@ -2,8 +2,8 @@
     <div class="boxtitle"><b>TÀI KHOẢN</b></div>
     <div class="boxcontent formtaikhoan">
         <?php
-        if (isset($_SESSION['user1'])) {
-            extract($_SESSION['user1']);
+        if (isset($_SESSION['user'])) {
+            extract($_SESSION['user']);
             ?>
             <div class="row mb10">
                 Xin chao <br />

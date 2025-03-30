@@ -1,4 +1,21 @@
 <?php
+function delete_tk($id)
+{
+    $sql = "DELETE FROM tbl_user WHERE id =" . $id;
+    pdo_execute($sql);
+}
+function load_all_taikhoan()
+{
+    $sql = "SELECT * FROM tbl_user ORDER BY id DESC";
+    $listtaikhoan = pdo_query($sql);
+    return $listtaikhoan;
+}
+function insert_taikhoan_ad($username, $passwword,$email, $address, $tel)
+{
+    $sql = "INSERT INTO tbl_user (username,password,email,address,tel)
+         VALUES ('$username','$passwword','$email', '$address', '$tel')";
+    pdo_execute($sql);
+}
 function insert_taikhoan($email, $username, $passwword)
 {
     $sql = "INSERT INTO tbl_user (email,username,password)
@@ -26,15 +43,14 @@ function checkemail($email)
     $product = pdo_query_one($sql);
     return $product;
 }
-function delete_tk($id)
+function load_all_tk($kyw)
 {
-    $sql = "DELETE FROM tbl_user WHERE id =" . $id;
-    pdo_execute($sql);
-}
-function load_all_taikhoan()
-{
-    $sql = "SELECT * FROM tbl_user ORDER BY id DESC";
-    $listtaikhoan = pdo_query($sql);
-    return $listtaikhoan;
+    $sql = "SELECT * FROM tbl_user WHERE 1";
+    if ($kyw != "") {
+        $sql .= " and username like '%" . $kyw . "%'";
+    }
+    $sql .= " ORDER BY id DESC";
+    $productlist = pdo_query($sql);
+    return $productlist;
 }
 ?>

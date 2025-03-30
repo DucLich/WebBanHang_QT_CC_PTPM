@@ -424,7 +424,25 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-
+.frm input[type="text"] {
+  width: auto;
+  border: 1px #ccc solid;
+  /* padding: 5px 10px; */
+  border-radius: 5px;
+}
+.frm input[type="submit"],
+.frm input[type="reset"],
+.frm input[type="button"] {
+  border: 1px #ccc solid;
+  border-radius: 5px;
+  background-color: white;
+  margin-top: 15px;
+}
+.frm input[type="submit"]:hover,
+.frm input[type="reset"]:hover,
+.frm  input[type="button"]:hover {
+  background-color: #ccc;
+}
 .frmtitle {
   background-color: aqua;
   color: #666;

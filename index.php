@@ -5,6 +5,8 @@ include "view/header.php";
 include "global.php";
 include "model/cartegory.php";
 include "model/product.php";
+include "model/taikhoan.php";
+include "model/cart.php";
 
 if (!isset($_SESSION['mycart']))
     $_SESSION['mycart'] = [];
@@ -34,7 +36,7 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
                 $passwword = $_POST['pass'];
                 $checkuser = checkuser($username, $passwword);
                 if (is_array($checkuser)) {
-                    $_SESSION['user1'] = $checkuser;
+                    $_SESSION['user'] = $checkuser;
                     // $thongbao = "Bạn đã đăng nhập thành công";
                     header('Location:index.php');
                 } else {
@@ -106,8 +108,8 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
             break;
         case 'billcomfirm':
             if (isset($_POST['dongydathang']) && ($_POST['dongydathang'])) {
-                if (isset($_SESSION['user1']))
-                    $iduser = $_SESSION['user1']['id'];
+                if (isset($_SESSION['user']))
+                    $iduser = $_SESSION['user']['id'];
                 else
                     $iduser = 0;
                 $name = $_POST['name'];
@@ -121,18 +123,31 @@ if (isset($_GET['act']) && $_GET['act'] != "") {
                 $idbill = insert_bill($iduser, $name, $email, $address, $tel, $pttt, $ngaydathang, $tongdonhang);
 
                 //insert into cart: $sesssion['mycart'] & idbill
-                foreach ($_SESSION['mycart'] as $cart) {
-                    insert_cart($_SESSION['user1']['id'], $cart[0], $cart[2], $cart[1], $cart[3], $cart[4], $cart[5], $idbill);
+                // foreach ($_SESSION['mycart'] as $cart) {
+                //     insert_cart($_SESSION['user']['id'], $cart[0], $cart[2], $cart[1], $cart[3], $cart[4], $cart[5], $idbill);
+                // }
+                // $_SESSION['cart'] = [];
+                if (isset($_SESSION['mycart']) && count($_SESSION['mycart']) > 0) {
+                    foreach ($_SESSION['mycart'] as $cart) {
+                        insert_cart($iduser, $cart[0], $cart[2], $cart[1], $cart[3], $cart[4], $cart[5], $idbill);
+                    }
+                    // Sau khi lưu vào database, làm mới giỏ hàng
+                    $_SESSION['mycart'] = [];
                 }
-                $_SESSION['cart'] = [];
             }
             $bill = load_one_bill($idbill);
             $billct = load_all_cart($idbill);
             include "view/cart/billcomfirm.php";
             break;
 
+        case 'chitiethoadon':
+            $idbill = $_GET['idbill'];
+            $bill = load_one_bill($idbill);
+            $billct = load_all_cart($idbill);
+            include "view/detailbill.php";
+            break;
         case 'mybill':
-            $listbill = load_all_bill("", $_SESSION['user1']['id']);
+            $listbill = load_all_bill("", $_SESSION['user']['id']);
             include "view/cart/mybill.php";
             break;
 

@@ -10,6 +10,7 @@
                         <th>SỐ LƯỢNG ĐẶT HÀNG</th>
                         <th>TỔNG GIÁ TRỊ</th>
                         <th>Tình trạng đơn hàng</th>
+                        <th></th>
                     </tr>
                     <?php
                     if (is_array($listbill)) {
@@ -23,6 +24,7 @@
                             <td>' . $countsp . '</td>
                             <td>' . $bill['total'] . '</td>
                             <td>' . $ttdh . '</td>
+                            <td><a href="index.php?act=chitiethoadon&idbill=' . $bill['id'] . '" class="btn">Xem chi tiết</a></td>
                         </tr>';
                         }
                     }
@@ -32,8 +34,6 @@
         </div>
     </div>
     <div class="boxphai">
-        <?php
-        include "view/boxright.php";
-        ?>
+        <?php include "view/boxright.php"; ?>
     </div>
 </div>

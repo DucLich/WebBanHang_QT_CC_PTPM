@@ -2,6 +2,10 @@
     <div class="row frmtitle">
         <h1>DANH SÁCH TÀI KHOẢN</h1>
     </div>
+    <form action="index.php?act=tracuutk" method="post" class="frm">
+        <input type="text" name="kyw">
+        <input type="submit" name="listok" value="GO">
+    </form>
     <div class="row frmcontent">
         <div class="row mb frmdsloai">
             <table>
@@ -39,8 +43,8 @@
             <input type="button" value="Chọn tất cả">
             <input type="button" value="Bỏ chọn tất cả">
             <input type="button" value="Xóa các mục đã chọn">
-            <a href="index.php?act=cartegoryadd">
-                <input type="button" value="Nhập thêm">
+            <a href="index.php?act=Themtaikhoan">
+                <input type="button" value="Thêm tài khoản mới">
         </div>
     </div>
 </div>

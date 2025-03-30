@@ -175,10 +175,31 @@ if (isset($_GET['act'])) {
             $listtaikhoan = load_all_taikhoan();
             include "taikhoan/list.php";
             break;
+        case 'Themtaikhoan':
+            if (isset($_POST['addcr']) && ($_POST['addcr'])) {
+                $username = $_POST['username'];
+                $passwword = $_POST['password'];
+                $email = $_POST['email'];
+                $address = $_POST['address'];
+                $tel = $_POST['phone'];
+                insert_taikhoan_ad($username, $passwword,$email, $address, $tel);
+                $thongbao = "Thêm thành công";
+            }
+            include "taikhoan/themtk.php";
+            break;
+        case 'tracuutk':
+            if (isset($_POST['listok']) && ($_POST['listok'])) {
+                $username = $_POST['kyw'];
+                $listtaikhoan = load_all_tk($username);
+                $thongbao = "Thêm thành công";
+            }
+            include "taikhoan/list.php";
+            break;
         case 'dsbl':
             $listbinhluan = load_all_binhluan(0);
             include "binhluan/list.php";
             break;
+    
         case 'xoabl':
             if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                 delete_bl($_GET['id']);

@@ -6,11 +6,11 @@
                 <div class="row boxcontent bill">
                     <table>
                         <?php
-                        if ($_SESSION['user1']) {
-                            $name = $_SESSION['user1']['username'];
-                            $address = $_SESSION['user1']['address'];
-                            $email = $_SESSION['user1']['email'];
-                            $tel = $_SESSION['user1']['tel'];
+                        if ($_SESSION['user']) {
+                            $name = $_SESSION['user']['username'];
+                            $address = $_SESSION['user']['address'];
+                            $email = $_SESSION['user']['email'];
+                            $tel = $_SESSION['user']['tel'];
                         } else {
                             $name = "";
                             $address = "";
