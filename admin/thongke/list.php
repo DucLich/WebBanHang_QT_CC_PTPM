@@ -13,6 +13,19 @@
                     <th>GIÁ THẤP NHẤT</th>
                     <th>GIÁ TRUNG BÌNH</th>
                 </tr>
+                <?php
+                foreach ($listthongke as $tk) {
+                    extract($tk);
+                    echo '<tr>
+                    <td>' . $madm . '</td>
+                    <td>' . $tendm . '</td>
+                    <td>' . $countsp . '</td>
+                    <td>' . $maxprice . '</td>
+                    <td>' . $minprice . '</td>
+                    <td>' . $avgprice . '</td>
+                </tr>';
+                }
+                ?>
             </table>
         </div>
         <div class="row mb"><a href=""></a>
