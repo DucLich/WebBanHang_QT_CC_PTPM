@@ -4,8 +4,8 @@
             <div class="boxtitle">Cập nhật tài khoản</div>
             <div class="row boxcontent formtaikhoan">
                 <?php
-                if (isset($_SESSION['user1']) && (is_array($_SESSION['user1']))) {
-                    extract($_SESSION['user1']);
+                if (isset($_SESSION['user']) && (is_array($_SESSION['user']))) {
+                    extract($_SESSION['user']);
                 }
                 ?>
                 <form action="index.php?act=edit_taikhoan" method="post">

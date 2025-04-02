@@ -10,7 +10,7 @@
 
 <body>
     <div class="boxcenter">
-        <div class="row mb10 iheader">
+        <div class="row iheader">
             <h1>Website Bán Hàng</h1>
         </div>
         <div class="row mb10 menu">

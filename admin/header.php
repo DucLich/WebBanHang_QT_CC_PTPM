@@ -10,10 +10,10 @@
 
 <body>
     <div class="boxcenter">
-        <div class="row mb iheaderadmin">
+        <div class="row iheaderadmin">
             <h1>Đây là trang Admin</h1>
         </div>
-        <div class="row mb menu">
+        <div class="row menu">
             <ul>
                 <li><a href="index.php">Trang chủ</a></li>
                 <li><a href="index.php?act=cartegoryadd">Loại sản phẩm</a></li>

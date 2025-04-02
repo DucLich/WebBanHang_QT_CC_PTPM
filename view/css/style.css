@@ -31,7 +31,7 @@
     background-color: #cff1f5;
     border: 1px #4cae4c solid;
     color: blue;
-    border-radius: 5px;
+    border-radius: 5px 5px 0 0;
   }
   .iheader h1 {
     margin: 20px;
@@ -43,9 +43,9 @@
     font-size: 1.4vw;
   }
   .menu {
-    background-color: rgb(59, 59, 59);
-    color: #ccc;
-    border-radius: 5px;
+    background-color: #a3eedf;
+    color: #cccccc;
+    border-radius: 0 0 5px 5px;
   }
   .menu ul {
     text-align: center;
@@ -294,10 +294,10 @@
 
   /*-----Admin------*/
   .iheaderadmin {
-    background-color: #eee;
+    background-color: #cff1f5;
     border: 1px #ccc solid;
     color: #666;
-    border-radius: 5px;
+    border-radius: 5px 5px 0 0;
     padding: 10px 20px;
   }
   .iheaderadmin h1 {
@@ -392,7 +392,7 @@
   padding: 0px 15px;
 }
 .menu ul li a {
-  color: #ccc;
+  color: #090df9;
   text-decoration: none;
   transition: 0.5s;
 }
@@ -444,13 +444,15 @@
   background-color: #ccc;
 }
 .frmtitle {
-  background-color: aqua;
+  /* background-color: aqua; */
   color: #666;
   border-radius: 5px;
   padding: 10px 20px;
 }
 .frmtitle h1 {
   text-align: center;
+  font-size: 1.6vw;
+
 }
 .frmcontent {
   padding: 20px 0px;
@@ -512,4 +514,9 @@
 .bill table td {
   padding: 10px 20px;
   border: none;
+}
+
+.mt10 {
+  margin-top: 15px;
+  /* top: 25px; */
 }
