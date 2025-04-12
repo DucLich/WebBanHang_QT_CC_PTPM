@@ -5,7 +5,7 @@ function insert_taikhoan($email, $username, $passwword)
          VALUES ('$email','$username','$passwword')";
     pdo_execute($sql);
 }
-function checkuser($username, $passwword)
+function checkuser($username, $passwword)c
 {
     $sql = "SELECT * FROM tbl_user WHERE username ='" . $username . "'AND password = '" . $passwword . "'";
     $product = pdo_query_one($sql);
