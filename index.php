@@ -1,11 +1,12 @@
 <?php
 session_start();
-include "model/pdo.php";
+include('../model/pdo.php');
 include "view/header.php";
 include "global.php";
 include "model/cartegory.php";
 include "model/product.php";
-include "model/taikhoan.php";
+include('../model/pdo.php');
+include('../model/taikhoan.php');
 
 if (!isset($_SESSION['mycart']))
     $_SESSION['mycart'] = [];

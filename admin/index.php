@@ -1,5 +1,10 @@
 <?php
 include "../model/pdo.php";
+include "../model/cart.php";
+include "../model/taikhoan.php";
+include "../model/binhluan.php";
+include "../model/cartegory.php";
+include "../model/brand.php";
 include "../model/product.php";
 include "header.php";
 
