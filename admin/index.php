@@ -4,7 +4,6 @@ include "../model/cart.php";
 include "../model/taikhoan.php";
 include "../model/binhluan.php";
 include "../model/cartegory.php";
-include "../model/brand.php";
 include "../model/product.php";
 include "header.php";
 
@@ -82,14 +81,17 @@ if (isset($_GET['act'])) {
             include "product/productlist.php";
             break;
 
-        case 'clientlist':
-            include "taikhoan/list.php";
-            break;
-        case 'xoatk':
-            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-            }
-            include "taikhoan/list.php";
-            break;
+            case 'clientlist':
+                $listtaikhoan = load_all_taikhoan();
+                include "taikhoan/list.php";
+                break;
+            case 'xoatk':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    delete_tk($_GET['id']);
+                }
+                $listtaikhoan = load_all_taikhoan();
+                include "taikhoan/list.php";
+                break;
         case 'dsbl':
             include "binhluan/list.php";
             break;
